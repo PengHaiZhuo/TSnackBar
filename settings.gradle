@@ -1,0 +1,3 @@
+include ':topsnackbar'
+include ':app'
+rootProject.name = "TSnackBar"
