@@ -11,6 +11,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        show_top_snack_bar.setOnClickListener {
+            val ts=TopSnackbar.make(it,getString(R.string.my_name_is_top), TopSnackbar.LENGTH_SHORT)
+            ts.view.setBackgroundColor(Color.YELLOW)
+            ts.show()
+        }
 
         show_snack_bar.setOnClickListener {
             Snackbar.make(
