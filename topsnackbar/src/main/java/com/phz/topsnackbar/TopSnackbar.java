@@ -19,7 +19,6 @@ package com.phz.topsnackbar;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
-import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Build.VERSION;
@@ -343,30 +342,6 @@ public class TopSnackbar extends BaseTransientTopBar<TopSnackbar> {
     final TopSnackbarContentLayout contentLayout = (TopSnackbarContentLayout) view.getChildAt(0);
     final TextView tv = contentLayout.getMessageView();
     tv.setTextColor(color);
-    return this;
-  }
-
-  public static final int STYLE_COMPLETE=1;
-
-  public static final int STYLE_ERROR=2;
-
-  public static final int STYLE_WARNING=3;
-
-  @NonNull
-  public TopSnackbar setStyle(int style) {
-    switch (style){
-      case STYLE_COMPLETE:
-        view.setBackgroundColor(Color.GREEN);
-        break;
-      case STYLE_ERROR:
-        view.setBackgroundColor(Color.RED);
-        break;
-      case STYLE_WARNING:
-        view.setBackgroundColor(Color.YELLOW);
-        break;
-      default:
-        break;
-    }
     return this;
   }
 

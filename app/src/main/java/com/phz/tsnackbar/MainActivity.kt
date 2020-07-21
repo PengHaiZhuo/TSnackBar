@@ -1,5 +1,6 @@
 package com.phz.tsnackbar
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
@@ -11,7 +12,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         show_top_snack_bar.setOnClickListener {
-            TopSnackbar.make(it,"我是顶部Snackbar", TopSnackbar.LENGTH_SHORT).setStyle(TopSnackbar.STYLE_WARNING).show()
+            val ts=TopSnackbar.make(it,getString(R.string.my_name_is_top), TopSnackbar.LENGTH_SHORT)
+            ts.view.setBackgroundColor(Color.YELLOW)
+            ts.show()
         }
 
         show_snack_bar.setOnClickListener {
