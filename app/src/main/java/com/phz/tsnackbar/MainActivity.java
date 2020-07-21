@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import com.phz.topsnackbar.BaseTransientBottomBar;
 import com.phz.topsnackbar.TopSnackBar;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -30,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Snackbar.make(view,"我是正常Snackbar", Snackbar.LENGTH_SHORT).show();
                 break;
             case R.id.show_top_snack_bar:
-                TopSnackBar.make(view,"我是顶部Snackbar", BaseTransientBottomBar.LENGTH_LONG).show();
+                TopSnackBar.make(view,"我是顶部Snackbar", TopSnackBar.LENGTH_SHORT).show();
                 break;
         }
     }

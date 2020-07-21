@@ -127,7 +127,7 @@ public final class TopSnackBar extends BaseTransientBottomBar<TopSnackBar> {
      */
     @NonNull
     public static TopSnackBar make(@NonNull View view, @NonNull CharSequence text,
-                                   @Duration int duration) {
+                                   int duration) {
         final ViewGroup parent = findSuitableParent(view);
         if (parent == null) {
             throw new IllegalArgumentException("No suitable parent found from the given view. "
@@ -162,7 +162,7 @@ public final class TopSnackBar extends BaseTransientBottomBar<TopSnackBar> {
      *                 #LENGTH_LONG}
      */
     @NonNull
-    public static TopSnackBar make(@NonNull View view, @StringRes int resId, @Duration int duration) {
+    public static TopSnackBar make(@NonNull View view, @StringRes int resId, int duration) {
         return make(view, view.getResources().getText(resId), duration);
     }
 
