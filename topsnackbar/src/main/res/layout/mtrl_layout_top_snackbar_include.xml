@@ -23,12 +23,18 @@
   android:layout_gravity="top"
   android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
+  <androidx.appcompat.widget.AppCompatImageView
+      android:id="@+id/snackbar_icon"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_vertical|left|start"/>
+
   <TextView
     android:id="@+id/snackbar_text"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_weight="1"
-    android:layout_gravity="center_vertical|left|start"
+    android:layout_gravity="center_vertical"
     android:paddingTop="@dimen/design_snackbar_padding_vertical"
     android:paddingBottom="@dimen/design_snackbar_padding_vertical"
     android:paddingLeft="@dimen/design_snackbar_padding_horizontal"

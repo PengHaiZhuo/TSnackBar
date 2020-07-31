@@ -26,6 +26,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.core.view.ViewCompat;
 
 import com.google.android.material.color.MaterialColors;
@@ -35,6 +36,7 @@ import static androidx.annotation.RestrictTo.Scope.LIBRARY_GROUP;
 /** @hide */
 @RestrictTo(LIBRARY_GROUP)
 public class TopSnackbarContentLayout extends LinearLayout implements ContentViewCallback {
+  private AppCompatImageView imageView;
   private TextView messageView;
   private Button actionView;
 
@@ -57,8 +59,13 @@ public class TopSnackbarContentLayout extends LinearLayout implements ContentVie
   @Override
   protected void onFinishInflate() {
     super.onFinishInflate();
+    imageView=findViewById(R.id.snackbar_icon);
     messageView = findViewById(R.id.snackbar_text);
     actionView = findViewById(R.id.snackbar_action);
+  }
+
+  public AppCompatImageView getImageView() {
+    return imageView;
   }
 
   public TextView getMessageView() {

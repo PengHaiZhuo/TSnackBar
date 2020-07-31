@@ -19,6 +19,7 @@ package com.phz.topsnackbar;
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Build.VERSION;
@@ -38,6 +39,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RestrictTo;
 import androidx.annotation.StringRes;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.graphics.drawable.DrawableCompat;
 
@@ -173,6 +175,32 @@ public class TopSnackbar extends BaseTransientTopBar<TopSnackbar> {
     return snackbar;
   }
 
+  @NonNull
+  public static TopSnackbar make(
+          @NonNull View view, @NonNull CharSequence text, @Duration int duration,@SnackType int snacktype) {
+    final ViewGroup parent = findSuitableParent(view);
+    if (parent == null) {
+      throw new IllegalArgumentException(
+              "No suitable parent found from the given view. Please provide a valid view.");
+    }
+
+    final LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+    final TopSnackbarContentLayout content =
+            (TopSnackbarContentLayout)
+                    inflater.inflate(
+                            hasSnackbarButtonStyleAttr(parent.getContext())
+                                    ? R.layout.mtrl_layout_top_snackbar_include
+                                    : R.layout.design_layout_top_snackbar_include,
+                            parent,
+                            false);
+    final TopSnackbar snackbar = new TopSnackbar(parent, content, content);
+    snackbar.setText(text);
+    snackbar.setType(snacktype);
+    snackbar.setDuration(duration);
+    return snackbar;
+  }
+
+
   /**
    * {@link TopSnackbar}s should still work with AppCompat themes, which don't specify a {@code
    * snackbarButtonStyle}. This method helps to check if a valid {@code snackbarButtonStyle} is set
@@ -245,6 +273,30 @@ public class TopSnackbar extends BaseTransientTopBar<TopSnackbar> {
     final TopSnackbarContentLayout contentLayout = (TopSnackbarContentLayout) view.getChildAt(0);
     final TextView tv = contentLayout.getMessageView();
     tv.setText(message);
+    return this;
+  }
+
+
+  @NonNull
+  public TopSnackbar setType(@SnackType int snacktype) {
+    final TopSnackbarContentLayout contentLayout = (TopSnackbarContentLayout) view.getChildAt(0);
+    final AppCompatImageView iv = contentLayout.getImageView();
+    switch (snacktype){
+      case STYLE_ERROR:
+        iv.setImageResource(R.drawable.ic_snackbar_error_24);
+        view.setBackgroundColor(Color.RED);
+        break;
+      case STYLE_WARNING:
+        iv.setImageResource(R.drawable.ic_snackbar_warning_24);
+        view.setBackgroundColor(Color.YELLOW);
+        this.setTextColor(Color.BLUE);
+        break;
+      case STYLE_COMPLETE:
+        iv.setImageResource(R.drawable.ic_snackbar_complete_24);
+        view.setBackgroundColor(Color.GREEN);
+        break;
+    }
+
     return this;
   }
 

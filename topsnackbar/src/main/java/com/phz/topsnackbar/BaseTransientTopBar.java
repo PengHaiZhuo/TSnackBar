@@ -180,6 +180,16 @@ public abstract class BaseTransientTopBar<B extends BaseTransientTopBar<B>> {
   @Retention(RetentionPolicy.SOURCE)
   public @interface Duration {}
 
+  @RestrictTo(LIBRARY_GROUP)
+  @IntDef({STYLE_ERROR, STYLE_WARNING, STYLE_COMPLETE})
+  @IntRange(from = 1)
+  @Retention(RetentionPolicy.SOURCE)
+  public @interface SnackType{}
+
+  public static final int STYLE_ERROR = -2;
+  public static final int STYLE_WARNING = -1;
+  public static final int STYLE_COMPLETE = 0;
+
   /**
    * Show the Snackbar indefinitely. This means that the Snackbar will be displayed from the time
    * that is {@link #show() shown} until either it is dismissed, or another Snackbar is shown.
