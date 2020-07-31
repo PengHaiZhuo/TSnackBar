@@ -33,4 +33,6 @@ STYLE_ERROR|红底、白字、带error图标
 STYLE_WARNING|黄底、篮字、带warning图标
 STYLE_COMPLETE|绿底、白字、带complete图标
 
+### 截图
+
 <img src="https://i.loli.net/2020/07/31/gTospmi2AMXIh6P.png" alt="Sample"  width="360" height="640">
