@@ -7,11 +7,11 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/show_top_snack_bar"
+        android:id="@+id/bt_tsnackbar_one"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="显示顶部SnackBar"
-        app:layout_constraintBottom_toTopOf="@+id/show_snack_bar"
+        android:text="显示顶部snackbar（错误）"
+        app:layout_constraintBottom_toTopOf="@+id/bt_tsnackbar_two"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,6 +26,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/show_top_snack_bar" />
+        app:layout_constraintTop_toBottomOf="@+id/bt_tsnackbar_three" />
+
+    <Button
+        android:id="@+id/bt_tsnackbar_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="显示顶部snackbar（警告）"
+        app:layout_constraintBottom_toTopOf="@+id/bt_tsnackbar_three"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_tsnackbar_one" />
+
+    <Button
+        android:id="@+id/bt_tsnackbar_three"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="显示顶部snackbar（完成）"
+        app:layout_constraintBottom_toTopOf="@+id/show_snack_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_tsnackbar_two" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

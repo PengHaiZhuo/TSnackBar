@@ -11,11 +11,21 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        show_top_snack_bar.setOnClickListener {
-            val ts=TopSnackbar.make(it,getString(R.string.my_name_is_top), TopSnackbar.LENGTH_SHORT)
-            ts.view.setBackgroundColor(Color.YELLOW)
+        bt_tsnackbar_one.setOnClickListener {
+            val ts=TopSnackbar.make(it,getString(R.string.my_name_is_top), TopSnackbar.LENGTH_SHORT,TopSnackbar.STYLE_ERROR)
             ts.show()
         }
+
+        bt_tsnackbar_two.setOnClickListener {
+            val ts=TopSnackbar.make(it,getString(R.string.my_name_is_top), TopSnackbar.LENGTH_SHORT,TopSnackbar.STYLE_WARNING)
+            ts.show()
+        }
+
+        bt_tsnackbar_three.setOnClickListener {
+            val ts=TopSnackbar.make(it,getString(R.string.my_name_is_top), TopSnackbar.LENGTH_SHORT,TopSnackbar.STYLE_COMPLETE)
+            ts.show()
+        }
+
 
         show_snack_bar.setOnClickListener {
             Snackbar.make(
