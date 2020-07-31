@@ -12,18 +12,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         bt_tsnackbar_one.setOnClickListener {
-            val ts=TopSnackbar.make(it,getString(R.string.my_name_is_top), TopSnackbar.LENGTH_SHORT,TopSnackbar.STYLE_ERROR)
-            ts.show()
+            TopSnackbar.make(it,getString(R.string.my_name_is_top), TopSnackbar.LENGTH_SHORT,TopSnackbar.STYLE_ERROR).show()
         }
 
         bt_tsnackbar_two.setOnClickListener {
-            val ts=TopSnackbar.make(it,getString(R.string.my_name_is_top), TopSnackbar.LENGTH_SHORT,TopSnackbar.STYLE_WARNING)
-            ts.show()
+            TopSnackbar.make(it,getString(R.string.my_name_is_top), TopSnackbar.LENGTH_SHORT,TopSnackbar.STYLE_WARNING).show()
         }
 
         bt_tsnackbar_three.setOnClickListener {
-            val ts=TopSnackbar.make(it,getString(R.string.my_name_is_top), TopSnackbar.LENGTH_SHORT,TopSnackbar.STYLE_COMPLETE)
-            ts.show()
+           TopSnackbar.make(it,getString(R.string.my_name_is_top), TopSnackbar.LENGTH_SHORT,TopSnackbar.STYLE_COMPLETE).show()
         }
 
 

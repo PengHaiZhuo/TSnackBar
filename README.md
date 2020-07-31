@@ -1,38 +1,36 @@
 # TSnackBar
 顶部Snackbar，源码来自material:1.1.0
 
-TopSnackbar除了在顶部外，和普通Snackbar使用一样：
+### step1:add maven dependency in project's build.gradle
+
 ```
-btn.setOnClickListener(new View.OnClickListener() {
-    @Override
-	public void onClick(View v) {
-   Snackbar snackBar =Snackbar.make(v,"it is snackbar!",Snackbar.LENGTH_SHORT);
-	 //设置SnackBar背景颜色
-	 snackBar.getView().setBackgroundResource(R.color.bg_snackbar);
-	 //设置按钮文字颜色
-	 snackBar.setActionTextColor(Color.WHITE);
-	 //设置点击事件
-	 snackBar.setAction("点击", new View.OnClickListener() {
-	 	@Override
-	 	public void onClick(View v) {
-	 		Toast.makeText(MainActivity.this,"It is Toast!",Toast.LENGTH_SHORT).show();
-	 	}
-	 });
-	 //设置回调
-	 snackBar.setCallback(new Snackbar.Callback() {
-	 
-	 	@Override
-	 	public void onDismissed(Snackbar snackbar, int event) {
-	 		super.onDismissed(snackbar, event);
-	 		Toast.makeText(MainActivity.this, "Snackbar dismiss", Toast.LENGTH_SHORT).show();	
-	 	}
-     
-	 	@Override
-	 	public void onShown(Snackbar snackbar) {
-	 		super.onShown(snackbar);
-	 		Toast.makeText(MainActivity.this, "Snackbar show", Toast.LENGTH_SHORT).show();
-	 	}
-	 }).show();
-	}
-});
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven {url "https://jitpack.io" }
+    }
+}
 ```
+
+### step2: add dependency in module's build.gradle
+```
+ implementation 'com.github.PengHaiZhuo:TSnackBar:1.0.1'
+```
+
+### step3: use this
+```
+bt.setOnClickListener {
+    TopSnackbar.make(it,"错误", TopSnackbar.LENGTH_SHORT,TopSnackbar.STYLE_ERROR).show()
+    //TopSnackbar.make(it,"警告", TopSnackbar.LENGTH_SHORT,TopSnackbar.STYLE_WARNING).show()
+    //TopSnackbar.make(it,"完成", TopSnackbar.LENGTH_SHORT,TopSnackbar.STYLE_COMPLETE).show()
+    }
+```
+
+Type|Description
+|:--:|:--:|
+STYLE_ERROR|红底、白字、带error图标
+STYLE_WARNING|黄底、篮字、带warning图标
+STYLE_COMPLETE|绿底、白字、带complete图标
+
+![image](https://i.loli.net/2020/07/31/gTospmi2AMXIh6P.png)
