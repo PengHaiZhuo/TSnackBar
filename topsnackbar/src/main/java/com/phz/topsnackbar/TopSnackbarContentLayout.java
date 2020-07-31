@@ -22,6 +22,7 @@ import android.support.v4.view.ViewCompat;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -31,18 +32,19 @@ import static android.support.annotation.RestrictTo.Scope.LIBRARY_GROUP;
  * @hide
  */
 @RestrictTo(LIBRARY_GROUP)
-public class SnackbarContentLayout extends LinearLayout implements BaseTransientBottomBar.ContentViewCallback {
+public class TopSnackbarContentLayout extends LinearLayout implements BaseTransientTopBar.ContentViewCallback {
+    private ImageView mImageView;
     private TextView mMessageView;
     private Button mActionView;
 
     private int mMaxWidth;
     private int mMaxInlineActionWidth;
 
-    public SnackbarContentLayout(Context context) {
+    public TopSnackbarContentLayout(Context context) {
         this(context, null);
     }
 
-    public SnackbarContentLayout(Context context, AttributeSet attrs) {
+    public TopSnackbarContentLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.SnackbarLayout);
         mMaxWidth = a.getDimensionPixelSize(R.styleable.SnackbarLayout_android_maxWidth, -1);
@@ -54,8 +56,13 @@ public class SnackbarContentLayout extends LinearLayout implements BaseTransient
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
+        mImageView=findViewById(R.id.snackbar_icon);
         mMessageView = findViewById(R.id.snackbar_text);
         mActionView = findViewById(R.id.snackbar_action);
+    }
+
+    public ImageView getmImageView() {
+        return mImageView;
     }
 
     public TextView getMessageView() {

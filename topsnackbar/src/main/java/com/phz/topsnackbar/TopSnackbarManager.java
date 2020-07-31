@@ -23,20 +23,20 @@ import android.support.design.widget.Snackbar;
 
 import java.lang.ref.WeakReference;
 
-class SnackbarManager {
+class TopSnackbarManager {
 
     static final int MSG_TIMEOUT = 0;
 
     private static final int SHORT_DURATION_MS = 1500;
     private static final int LONG_DURATION_MS = 2750;
 
-    private static SnackbarManager sSnackbarManager;
+    private static TopSnackbarManager sTopSnackbarManager;
 
-    static SnackbarManager getInstance() {
-        if (sSnackbarManager == null) {
-            sSnackbarManager = new SnackbarManager();
+    static TopSnackbarManager getInstance() {
+        if (sTopSnackbarManager == null) {
+            sTopSnackbarManager = new TopSnackbarManager();
         }
-        return sSnackbarManager;
+        return sTopSnackbarManager;
     }
 
     private final Object mLock;
@@ -45,7 +45,7 @@ class SnackbarManager {
     private SnackbarRecord mCurrentSnackbar;
     private SnackbarRecord mNextSnackbar;
 
-    private SnackbarManager() {
+    private TopSnackbarManager() {
         mLock = new Object();
         mHandler = new Handler(Looper.getMainLooper(), new Handler.Callback() {
             @Override

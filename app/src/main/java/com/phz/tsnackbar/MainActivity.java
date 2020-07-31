@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Snackbar.make(view,"我是正常Snackbar", Snackbar.LENGTH_SHORT).show();
                 break;
             case R.id.show_top_snack_bar:
-                TopSnackBar.make(view,"我是顶部Snackbar", TopSnackBar.LENGTH_SHORT).show();
+                TopSnackBar.make(view,"我是顶部Snackbar", TopSnackBar.LENGTH_SHORT,TopSnackBar.STYLE_WARNING).show();
                 break;
         }
     }
