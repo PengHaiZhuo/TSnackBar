@@ -33,4 +33,4 @@ STYLE_ERROR|红底、白字、带error图标
 STYLE_WARNING|黄底、篮字、带warning图标
 STYLE_COMPLETE|绿底、白字、带complete图标
 
-![device-2020-07-31-144336.png](https://i.loli.net/2020/07/31/gTospmi2AMXIh6P.png)
+![device-2020-07-31-144336.png](https://i.loli.net/2020/07/31/gTospmi2AMXIh6P.png,size_16,color_FFFFFF,t_70)
