@@ -1,6 +1,7 @@
 # TSnackBar
 顶部Snackbar，源码来自support27.1.1
-<font color="#ff0000">注意：只能用于support包开发的应用引用，如果targetApi>28,请使用TSnackBar1.0.0+</font>
+
+<font color="#ff0000">如果targetApi>28,请使用TSnackBar1.0.0+</font>
 
 ### 添加了样式
 
