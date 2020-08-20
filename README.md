@@ -1,6 +1,9 @@
 # TSnackBar
 顶部Snackbar，源码来自material:1.1.0
 
+### 注意事项
+此库有引用material1.1.0和appcompat1.1.0，所以仅支持1.1.0及以下情况下使用，如果您使用1.2.0的包，则此库不支持。
+
 ### step1:add maven dependency in project's build.gradle
 
 ```
