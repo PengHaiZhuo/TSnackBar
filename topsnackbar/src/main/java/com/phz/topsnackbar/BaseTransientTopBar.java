@@ -78,7 +78,6 @@ import static androidx.annotation.RestrictTo.Scope.LIBRARY_GROUP;
 import static com.google.android.material.animation.AnimationUtils.FAST_OUT_SLOW_IN_INTERPOLATOR;
 import static com.google.android.material.animation.AnimationUtils.LINEAR_INTERPOLATOR;
 import static com.google.android.material.animation.AnimationUtils.LINEAR_OUT_SLOW_IN_INTERPOLATOR;
-import static com.google.android.material.internal.ThemeEnforcement.createThemedContext;
 
 /**
  * Base class for lightweight transient bars that are displayed along the bottom edge of the
@@ -1104,7 +1103,7 @@ public abstract class BaseTransientTopBar<B extends BaseTransientTopBar<B>> {
     }
 
     protected SnackbarBaseLayout(@NonNull Context context, AttributeSet attrs) {
-      super(createThemedContext(context, attrs, 0, 0), attrs);
+      super(context, attrs);
       // Ensure we are using the correctly themed context rather than the context that was passed
       // in.
       context = getContext();
