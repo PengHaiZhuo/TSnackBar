@@ -45,5 +45,3 @@ STYLE_COMPLETE|绿底、白字、带complete图标
 		<em>demo截图</em>
 	</p>
 </p>
-
-<img src="https://i.loli.net/2020/07/31/gTospmi2AMXIh6P.png" alt="Sample"  width="360" height="640">
