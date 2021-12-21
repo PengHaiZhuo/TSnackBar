@@ -19,6 +19,8 @@ allprojects {
 
 ### step2: add dependency in module's build.gradle
 ```
+//support环境tag 0.0.2
+//andoirx环境tag 1.1.1
  implementation 'com.github.PengHaiZhuo:TSnackBar:Tag'
 ```
 
